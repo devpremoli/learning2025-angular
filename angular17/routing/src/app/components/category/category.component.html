@@ -1,0 +1,14 @@
+<h2>{{ categoryId | titlecase }} Products</h2>
+<button (click)="applyFilter('price')">Sort by Price</button>
+<button (click)="applyFilter('popularity')">Sort by Popularity</button>
+
+<ul>
+  <li *ngFor="let product of products">
+    <button (click)="navigateToProduct(product.id, true)">
+      View {{ product.name }} (with promo)
+    </button>
+    <button (click)="navigateToProduct(product.id, false)">
+      View {{ product.name }} (no promo)
+    </button>
+  </li>
+</ul>
